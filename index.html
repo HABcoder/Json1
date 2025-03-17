@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="card">
+            <div id="div1">
+                <img src=".." alt="" id="image">
+            </div>
+            <div id="div2">
+                <h2>Entry Pass</h2>
+                <h3 id="name">Movie Name: </h3>
+                <p id="actor">Actor:</p>
+                <p id="date">Date: </p>
+                <p id="timing">Timing: </p>
+                <p id="genre">Movie type: </p>
+                <p id="director">Director: </p>
+                <p id="country">Country: </p>
+                <p id="rating">Rating: </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+         var url = "data.json"
+
+         xmlhttp.onreadystatechange = function(){
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                var object = JSON.parse(xmlhttp.response);
+
+                document.getElementById("image").setAttribute("src", object['Image']);
+                document.getElementById("name").innerHTML += object['movieName'];
+                document.getElementById("actor").innerHTML += object["actor"];
+                document.getElementById("date").innerHTML += object["date"];
+                document.getElementById("timing").innerHTML += object["Timing"];
+                document.getElementById("genre").innerHTML += object["Genre"];
+                document.getElementById("director").innerHTML += object["director"];
+                document.getElementById("country").innerHTML += object["country"];
+                document.getElementById("rating").innerHTML += object["rating"]; 
+
+
+            }
+         }
+
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+    </script>
+</body>
+</html>
