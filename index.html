@@ -5,28 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.26/dist/sweetalert2.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
     <h2 class="text-center display-3" id="title"></h2>
     <div class="main">
-        <div class="container dp">
-            <div id="div1">
-                <img src=".." alt="" id="image">
+        <div class="container">
+            <div class="dp">
+                <div id="div1">
+                    <img src=".." alt="" id="image">
+                </div>
+                <div id="div2">
+                    <h3 id="name">Movie Name: </h3>
+                    <p id="actor" class="mt-4">Actor: </p>
+                    <p id="date">Date: </p>
+                    <p id="timing">Timing: </p>
+                    <p id="genre">Movie type: </p>
+                    <p id="director">Director: </p>
+                    <p id="country">Country: </p>
+                    <p id="rating">Rating: </p>
+                </div>
             </div>
-            <div id="div2">
-                <h3 id="name">Movie Name: </h3>
-                <p id="actor" class="mt-4">Actor: </p>
-                <p id="date">Date: </p>
-                <p id="timing">Timing: </p>
-                <p id="genre">Movie type: </p>
-                <p id="director">Director: </p>
-                <p id="country">Country: </p>
-                <p id="rating">Rating: </p>
+            <div class="bt mt-4">
+              <button id="btn"></button>
             </div>
         </div>
+       
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.26/dist/sweetalert2.min.js"></script>
     <script>
         var xmlhttp = new XMLHttpRequest();
          var url = "data.json"
@@ -45,10 +52,18 @@
                 document.getElementById("director").innerHTML += object["director"];
                 document.getElementById("country").innerHTML += object["country"];
                 document.getElementById("rating").innerHTML += object["rating"]; 
+                document.getElementById("btn").innerHTML += object["button"]; 
+                document.getElementById('btn').addEventListener('click', function() {
+                    Swal.fire({
+               title: 'Success!',
+              text: 'You have successfully downloaded the pass',
+             icon: 'success',
+             confirmButtonText: 'Okay'       
+             });
 
-
-            }
+            })
          }
+        }
 
         xmlhttp.open("GET", url, true);
         xmlhttp.send();

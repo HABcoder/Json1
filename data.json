@@ -8,5 +8,6 @@
     "director": "Mehmet Ada Öztekin",
     "country": "Turkey",
     "rating": 7.9,
-    "Image": "img.jpg"
+    "Image": "img.jpg",
+    "button": "Download"
 }

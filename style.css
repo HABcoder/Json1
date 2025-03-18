@@ -41,5 +41,45 @@ img{
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     box-shadow: 0px 5px 9px rgba(58, 58, 58, 0.61);
+}
 
+@media (max-width:1199px){
+    #name{
+        font-size: 150%;
+    }
+    p{
+        font-size: 80%;
+    }  
+    #div2 {
+        padding: 20px;
+    } 
+}
+@media (max-width:991px){
+    #name{
+        font-size: 105%;
+    }
+    p{
+        font-size: 60%;
+    }  
+    #div2 {
+        padding: 10px;
+    } 
+}
+
+.bt button {
+    text-transform: uppercase;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.bt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.bt button:hover {
+    background-color: rgb(39, 103, 223);
+    color: white;
+    border-color: rgb(39, 103, 223);
 }
