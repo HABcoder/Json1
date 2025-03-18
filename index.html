@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+    <h2 class="text-center display-3" id="title"></h2>
     <div class="main">
-        <div class="card">
+        <div class="container dp">
             <div id="div1">
                 <img src=".." alt="" id="image">
             </div>
             <div id="div2">
-                <h2>Entry Pass</h2>
                 <h3 id="name">Movie Name: </h3>
-                <p id="actor">Actor:</p>
+                <p id="actor" class="mt-4">Actor: </p>
                 <p id="date">Date: </p>
                 <p id="timing">Timing: </p>
                 <p id="genre">Movie type: </p>
@@ -36,6 +37,7 @@
 
                 document.getElementById("image").setAttribute("src", object['Image']);
                 document.getElementById("name").innerHTML += object['movieName'];
+                document.getElementById("title").innerHTML += object['title'];
                 document.getElementById("actor").innerHTML += object["actor"];
                 document.getElementById("date").innerHTML += object["date"];
                 document.getElementById("timing").innerHTML += object["Timing"];
